@@ -10,12 +10,7 @@
 
 using namespace std;
 
-#include "operation.h"
-
-int readFile(Operation[], string);
-
-//function declaration for adding hex numbers together
-void addFunction(Operation[], int);
+int readFile(string);
 
 int main(int argc, char* argv[])
 {
@@ -27,26 +22,19 @@ int main(int argc, char* argv[])
         return 0;
     }
 
-    int lineNum = 0;
+    else{
 
-    string numberList = argv[1];
+    string numberList = "Programming-Project-1.txt";
 
-    Operation lineReader[100];
+    int hex = readFile(numberList);
 
-
-   lineNum = readFile(lineReader, numberList);
-   cout << lineNum << endl;
-
-    for(int i = 0; i < 5; i++)
-    {
-        lineReader[i].printOpAndNums();
     }
 
 
     return 0;
 }
 
-int readFile(Operation lineReader[], string readList)
+int readFile(string readList)
 {
     ifstream inputFile;
 
@@ -54,8 +42,7 @@ int readFile(Operation lineReader[], string readList)
     int lineNumber = 0;
 
     string opToDo;
-    int firstNum;
-    int secondNum;
+    uint32_t firstNum, secondNum, newNum;
 
     inputFile.open(readList);
 
@@ -67,39 +54,19 @@ int readFile(Operation lineReader[], string readList)
     
     while(inputFile >> opToDo >> hex >> firstNum >> secondNum)
     {
-        lineReader[lineNumber].setOperation(opToDo);
-        lineReader[lineNumber].setFirstEntry(firstNum);
-        lineReader[lineNumber].setSecondEntry(secondNum);
-        cout << lineReader[lineNumber].getFirstEntry() << endl;
-        lineNumber++;
+            if(opToDo == "ADD")
+            {
+                newNum = firstNum + secondNum;
+                cout << opToDo << " 0x" << hex << firstNum << " 0x" << hex << secondNum << ": <0x" << newNum << ">" << endl;
+            }
+            if(secondNum > UINT32_MAX - firstNum)
+            {
+                cout << "Overflow: <yes>" << endl;
+            }
+            else
+            {
+                cout << "Overflow: <no>" << endl;
+            }
     }
-
-    addFunction(lineReader, lineNumber);
-
-    return lineNumber;
-}
-
-void addFunction(Operation opArray[], int lineCount)
-{
-
-    int firstNum;
-    int secondNum;
-    int finalTotal;
-    bool overflowCheck;
-
-    for(int i = 0; i< lineCount; i++)
-    {
-        firstNum = opArray[i].getFirstEntry();
-        secondNum = opArray[i].getSecondEntry();
-        finalTotal = firstNum + secondNum;
-        opArray[i].setTotal(finalTotal);
-        if (finalTotal > 268435455){
-            overflowCheck = true;
-            opArray[i].setOverflow(overflowCheck);
-        }
-        else{
-            overflowCheck = false;
-            opArray[i].setOverflow(overflowCheck);
-        }
-    }
+    return 1;
 }
