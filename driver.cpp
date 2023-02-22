@@ -64,7 +64,7 @@ int readFile(Operation lineReader[], string readList)
         return -1;
     }
     
-    while(inputFile >> opToDo >> hex >> firstNum >> hex >> secondNum)
+    while(inputFile >> opToDo >> hex >> firstNum >> secondNum)
     {
         lineReader[lineNumber].setOperation(opToDo);
         lineReader[lineNumber].setFirstEntry(firstNum);
@@ -73,7 +73,7 @@ int readFile(Operation lineReader[], string readList)
     }
 
     addFunction(lineReader, lineNumber);
-    
+
     return lineNumber;
 }
 
@@ -83,6 +83,7 @@ void addFunction(Operation opArray[], int lineCount)
     int firstNum;
     int secondNum;
     int finalTotal;
+    bool overflowCheck;
 
     for(int i = 0; i< lineCount; i++)
     {
@@ -90,5 +91,14 @@ void addFunction(Operation opArray[], int lineCount)
         secondNum = opArray[i].getSecondEntry();
         finalTotal = firstNum + secondNum;
         opArray[i].setTotal(finalTotal);
+        cout << finalTotal << endl;
+        if (finalTotal > 268435455){
+            overflowCheck = true;
+            opArray[i].setOverflow(overflowCheck);
+        }
+        else{
+            overflowCheck = false;
+            opArray[i].setOverflow(overflowCheck);
+        }
     }
 }
