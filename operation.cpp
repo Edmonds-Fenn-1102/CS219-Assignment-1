@@ -58,5 +58,5 @@ void Operation::setTotal(int newTotal)
 
 void Operation::printOpAndNums()
 {
-    cout << operation << " " << firstEntry << " " << secondEntry << " " << "Total: " << total << endl;
+    cout << operation << " 0x" << hex << firstEntry << " 0x" << secondEntry << " " << "Total: 0x" << total << endl;
 }
