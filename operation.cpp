@@ -2,7 +2,7 @@
 
 Operation::Operation()
 {
-    operation = "ADD";
+    operation = "SUB";
     firstEntry = 56;
     secondEntry = 77;
     total = 0;

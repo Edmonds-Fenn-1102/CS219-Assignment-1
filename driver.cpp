@@ -35,6 +35,7 @@ int main(int argc, char* argv[])
 
 
    lineNum = readFile(lineReader, numberList);
+   cout << lineNum << endl;
 
     for(int i = 0; i < 5; i++)
     {
@@ -69,6 +70,7 @@ int readFile(Operation lineReader[], string readList)
         lineReader[lineNumber].setOperation(opToDo);
         lineReader[lineNumber].setFirstEntry(firstNum);
         lineReader[lineNumber].setSecondEntry(secondNum);
+        cout << lineReader[lineNumber].getFirstEntry() << endl;
         lineNumber++;
     }
 
@@ -91,7 +93,6 @@ void addFunction(Operation opArray[], int lineCount)
         secondNum = opArray[i].getSecondEntry();
         finalTotal = firstNum + secondNum;
         opArray[i].setTotal(finalTotal);
-        cout << finalTotal << endl;
         if (finalTotal > 268435455){
             overflowCheck = true;
             opArray[i].setOverflow(overflowCheck);
