@@ -15,7 +15,7 @@ using namespace std;
 int readFile(Operation[], string);
 
 //function declaration for adding hex numbers together
-int addFunction(int, int);
+void addFunction(Operation[], int);
 
 int main(int argc, char* argv[])
 {
@@ -72,10 +72,23 @@ int readFile(Operation lineReader[], string readList)
         lineNumber++;
     }
 
+    addFunction(lineReader, lineNumber);
+    
     return lineNumber;
 }
 
-int addFunction(int firstNum, int secondNum)
+void addFunction(Operation opArray[], int lineCount)
 {
-    return 1;
+
+    int firstNum;
+    int secondNum;
+    int finalTotal;
+
+    for(int i = 0; i< lineCount; i++)
+    {
+        firstNum = opArray[i].getFirstEntry();
+        secondNum = opArray[i].getSecondEntry();
+        finalTotal = firstNum + secondNum;
+        opArray[i].setTotal(finalTotal);
+    }
 }
