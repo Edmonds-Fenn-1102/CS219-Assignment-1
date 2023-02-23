@@ -21,3 +21,7 @@ After this, the file is opened and it is declared that the file is going to be s
 An 'if' statment looks to see if the operation is equal to addition or 'ADD', if it is, then the next step is to add the two number storing variable together, and then putting that total into the previously declared variable to hold the final number. The program then couts the operation variable, uses the hex keyword to change the decimal back to hex, outputs the next two numbers in hex while adding the '0x' back in front of them, and lastly output the final total in hex, also with a '0x' but also '<>' brackets. 
 
 After calculating all of that, the function checks for overflow using an if statement in which the program looks for if the second readfile number is larger than the max of the 32 bit system minus the first readfile number. If it does detect that, it will cout that there is overflow, and if it detects nothing, then it will cout that there is no overflow. After this the function ends the program returns to main, where it then ends.
+
+# Results and Overflow
+
+The results of this program should be a displayed operation, two hex numbers, and the total of those two numbers, also displayed in hex. The correct output should be ADD for all functions, and the totals should be 0x2, 0xfffffff, 0x0, 0x9999, and 0xa0eae14b in that order. The overflow should be no, no, yes, no, and no in that order as well.
