@@ -24,4 +24,4 @@ After calculating all of that, the function checks for overflow using an if stat
 
 # Results and Overflow
 
-The results of this program should be a displayed operation, two hex numbers, and the total of those two numbers, also displayed in hex. The correct output should be ADD for all functions, and the totals should be 0x2, 0xfffffff, 0x0, 0x9999, and 0xa0eae14b in that order. The overflow should be no, no, yes, no, and no in that order as well.
+The results of this program should be a displayed operation, two hex numbers, and the total of those two numbers, also displayed in hex. The correct output should be ADD for all functions, and the totals should be 0x2, 0xfffffff, 0x0, 0x9999, and 0xa0eae14b in that order, each of which can be found by adding the two input hex numbers of each line together. The overflow should be no, no, yes, no, and no in that order as well.
