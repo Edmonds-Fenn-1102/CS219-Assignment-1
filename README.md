@@ -6,6 +6,8 @@ In order to run this program, one must open a terminal and both input the name o
 
 It should look like this: ./AssignmentOneFinal Programming-Project-1.txt
 
+If the code isn't running, use the command 'make clean' and then 'make' to reset the program.
+
 # Purpose
 In this program, we are adding (at least at this time, more functions may be added later) two hexdecimal numbers together, and detecting if they have any overflow. 
 
