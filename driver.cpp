@@ -38,9 +38,6 @@ int readFile(string readList)
 {
     ifstream inputFile;
 
-    int i;
-    int lineNumber = 0;
-
     string opToDo;
     uint32_t firstNum, secondNum, newNum;
 
