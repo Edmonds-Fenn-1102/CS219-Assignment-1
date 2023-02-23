@@ -7,7 +7,7 @@ In order to run this program, one must open a terminal and both input the name o
 It should look like this: ./AssignmentOneFinal Programming-Project-1.txt
 
 # Purpose
-In this program, we are adding two hexdecimal numbers together, and detecting if they have any overflow. 
+In this program, we are adding (at least at this time, more functions may be added later) two hexdecimal numbers together, and detecting if they have any overflow. 
 
 # Explanation
 To start this program I include the necessary libraries at the top of my program needed to convert from decimal to hex, as well as storing strings.
